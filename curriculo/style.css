@@ -1,0 +1,172 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333;
+    
+}
+
+
+
+/* ===== HEADER ===== */
+header {
+    background: #0076b6ea;
+    padding: 20px 0;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+header li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+header li a:hover {
+    transition: 0.5s;
+    color: #90e0ef;
+}
+
+/* ===== PERFIL ===== */
+#perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    text-align: center;
+}
+
+#perfil img {
+    border-radius: 50%;
+    border: 3px solid #0077b6;
+    margin-bottom: 15px;
+    width: 15%;
+}
+
+#perfil h1 {
+    font-size: 1.8rem;
+    color: #023e8a;
+}
+
+/* ===== INFO PESSOAIS ===== */
+#info-pessoais ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+#experiencia p{
+    font-weight: bolder;
+}
+
+/* ===== SEÇÕES ===== */
+section h2 {
+    color: #0077b6;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0077b6;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+section p, section ul {
+    margin-bottom: 15px;
+}
+
+section ul {
+    padding-left: 20px;
+}
+
+.espaco {
+    margin: 20px 60px 30px 60px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.315);
+}
+
+.espaco:hover{
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+/* ===== REDES SOCIAIS ===== */
+
+#redes-sociais{
+    margin-top: 100px;
+    background-color: #7bd4f274;
+    padding: 4%;
+}
+
+#redes-sociais ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+#redes-sociais li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#redes-sociais a {
+    text-decoration: none;
+    color: #023e8a;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#redes-sociais a:hover {
+    color: #0096c7;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction:row;
+        align-items:center;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    #info-pessoais ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #perfil h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    #perfil img {
+        width: 80px;
+    }
+}
