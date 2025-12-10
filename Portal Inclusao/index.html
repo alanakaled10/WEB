@@ -1,0 +1,116 @@
+<!-- Improved index.html: Added viewport meta tag for responsiveness, and minor adjustments for better structure. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Inclusão</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="acessibilidade-bar">
+        <button onclick="ajustarFonte('+')">A+</button>
+        <button onclick="ajustarFonte('-')">A-</button>
+        <button onclick="alternarContraste()">🌓 Contraste</button>
+        <button onclick="lerTexto()">🔊 Ouvir</button>
+    </div>
+
+    <nav class="menu-principal">
+        <img src="logo.png" alt="Logo Portal Inclusão"> <!-- Assuming a logo image; adjust path as needed -->
+        <button data-section="direitos">Direitos</button>
+        <button data-section="servicos">Serviços</button>
+        <button data-section="comunidade">Comunidade</button>
+    </nav>
+
+    <header>
+        <h1>Portal Inclusão</h1>
+        <p>Informações simples, confiáveis e acessíveis para famílias com pessoas com deficiência.</p>
+        <input type="search" placeholder="O que você procura?">
+    </header>
+
+    <section id="direitos">
+        <h2>Direitos e Benefícios</h2>
+        <p>Explicações simples, passo a passo, sem termos difíceis.</p>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-file-alt"></i> <!-- Assuming Font Awesome or similar for icons -->
+                <h3>Documentos BPC</h3>
+                <button class="btn-primario">Consultar</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-list-ol"></i>
+                <h3>Passo a Passo</h3>
+                <button class="btn-secundario">Ver Guia</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Quem Pode Ajudar</h3>
+                <button class="btn-primario">Ver Contatos</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços e Apoio Local</h2>
+        <p>Descubra hospitais, clínicas e associações próximas.</p>
+        <div id="map"></div>
+        <div class="lista-servicos">
+            <div class="servico-card">
+                <span>🏥</span>
+                <div>
+                    <strong>Hospital Municipal</strong><br>
+                    Rua Central, 123<br>
+                    📞 (43) 3333-0000
+                </div>
+            </div>
+            <div class="servico-card">
+                <span>🧑‍⚕️</span>
+                <div>
+                    <strong>Clínica de Fisioterapia</strong><br>
+                    Av. Brasil, 456<br>
+                    📞 (43) 4444-1111
+                </div>
+            </div>
+            <div class="servico-card">
+                <span>👥</span>
+                <div>
+                    <strong>Associação de Pais</strong><br>
+                    Rua Esperança, 789<br>
+                    📞 (43) 5555-2222
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comunidade">
+        <h2>Ajuda & Comunidade</h2>
+        <p>Troque experiências e encontre apoio.</p>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Grupo de Pais de Autistas</h3>
+                <button class="btn-secundario">Entrar no WhatsApp</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-comments"></i>
+                <h3>Fórum Online</h3>
+                <button class="btn-primario">Acessar Fórum</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Dicas e Experiências</h3>
+                <button class="btn-secundario">Ver Dicas</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>🌍 Portal Inclusão – Nenhuma família sem informação.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

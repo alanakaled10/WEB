@@ -1,0 +1,322 @@
+/* Improved style.css: Enhanced responsiveness with more media queries, flexible units (rem/em), img responsiveness, menu stacking on mobile, font scaling, and better layout adjustments. */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root {
+  --azul: #1a73e8;
+  --amarelo: #ffd500;
+  --verde: #28a745;
+  --cinza: #f4f4f9;
+  --texto: #333;
+  --fundo: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: var(--cinza);
+  color: var(--texto);
+  padding-top: 4rem; /* Adjusted to rem for scalability */
+  font-size: 1rem; /* Base font size */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--azul);
+}
+
+header input {
+  margin-top: 1rem;
+  padding: 0.625rem;
+  width: 80%;
+  max-width: 25rem;
+  border: 2px solid var(--azul);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Menu */
+.menu-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #005abb4e; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.625rem 0;
+  z-index: 1000;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.menu-principal img {
+  width: 6.25rem; /* Scaled down */
+}
+
+.menu-principal button {
+  background: white;
+  color: #005BBB;
+  border: none;
+  border-radius: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.menu-principal button.ativo {
+  background: var(--amarelo);
+  color: black;
+}
+
+.menu-principal button:hover {
+  transform: scale(1.05);
+}
+
+/* Seções */
+section {
+  margin: 2.5rem auto;
+  padding: 1.25rem;
+  background: var(--fundo);
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1);
+  max-width: 62.5rem;
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--cinza);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-0.3125rem);
+}
+
+.card i {
+  font-size: 2rem;
+  color: var(--azul);
+  margin-bottom: 0.625rem;
+}
+
+.card h3 {
+  margin-bottom: 0.625rem;
+}
+
+/* Botões */
+.btn-primario {
+  background: var(--azul);
+  color: white;
+  padding: 0.625rem 0.9375rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-primario:hover {
+  background: #155ab6;
+}
+
+.btn-secundario {
+  background: var(--amarelo);
+  color: black;
+  padding: 0.625rem 0.9375rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-secundario:hover {
+  background: #e6c100;
+}
+
+/* Lista de serviços */
+.lista-servicos {
+  margin-top: 1.25rem;
+}
+
+.servico-card {
+  display: flex;
+  align-items: center;
+  background: var(--cinza);
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+
+.servico-card span {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+/* Mapa */
+#map {
+  height: 21.875rem; /* 350px */
+  width: 100%;
+  margin: 1.25rem 0;
+  border-radius: 0.625rem;
+}
+
+/* Acessibilidade */
+.acessibilidade-bar {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: var(--azul);
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  display: flex;
+  gap: 0.625rem;
+  z-index: 1000;
+}
+
+.acessibilidade-bar button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.625rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .menu-principal {
+    justify-content: flex-start;
+    padding: 0.625rem 1rem;
+    overflow-x: auto; /* Allow horizontal scroll if needed, but prefer wrap */
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+
+  #map {
+    height: 18.75rem; /* Smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.875rem; /* Slightly smaller base font */
+    padding-top: 6rem; /* More space for wrapped menu */
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header input {
+    width: 95%;
+  }
+
+  .menu-principal {
+      gap: 10px;
+      padding: 20px 10px;
+  }
+
+  .menu-principal button {
+      font-size: 12px;
+      padding: 5px 10px;
+  }
+
+
+
+  .menu-principal img {
+    width: 5rem;
+  }
+
+
+  section {
+    margin: 1.5rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+
+  .servico-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servico-card span {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #map {
+    height: 15.625rem; /* Even smaller on mobile */
+  }
+
+  .acessibilidade-bar {
+    flex-direction: row;
+    right: 1rem;
+    bottom: 0.625rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    background-color: #005abb4e;
+  }
+
+  .acessibilidade-bar button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+}
+
+}
+
+/* High contrast mode */
+body.contraste {
+  background: #000;
+  color: #fff;
+  --cinza: #333;
+  --fundo: #111;
+  --texto: #fff;
+}
